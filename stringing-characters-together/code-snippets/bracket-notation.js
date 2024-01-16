@@ -48,3 +48,22 @@ Violets are blue,
 Something, something, something,
 in a smelly shoe!`;
 console.log(poem)
+
+let charles = ['coder', 'Tech', 47, 23, 350];
+charles.sort();
+console.log(charles);
+
+let groceryBag = ['bananas', 'apples', 'edamame', 'chips', 'cucumbers', 'milk', 'cheese'];
+let selectedItems = [];
+
+selectedItems = groceryBag.slice(2, 5).sort();
+console.log(selectedItems);
+
+let school = [
+    ["science", "computer", "art"],
+    ["Jones", "Willoughby", "Rhodes"]
+];
+
+school[0].push("dance")
+school[1].push("Holmes")
+console.log(school)
