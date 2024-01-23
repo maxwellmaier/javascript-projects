@@ -5,12 +5,12 @@ while (i < 51) {
   i++;
 }
 
-const input = require('readline-sync');
+let n = 10;
+let answer = 1;
 
-let num = input.question('Please enter a positive number:');
-num = Number(num);
-
-while (num <= 0) {
-   num = input.question('Invalid input. Please enter a positive number:');
-   num = Number(num);
+while (n > 0) {
+   answer = answer + n;
+   n = n + 1;
 }
+
+console.log(answer);

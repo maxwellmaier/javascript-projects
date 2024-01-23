@@ -49,9 +49,9 @@ let evens = [],
 
 for (let i = 0; i < num.length; i++) {
   if (i % 2 == 0) {
-    evens.push (i);
+    evens.push (num[i]);
   } else {
-    odds.push (i);
+    odds.push (num[i]);
   }
 }
 console.log(evens, odds)
