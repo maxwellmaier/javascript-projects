@@ -76,4 +76,4 @@ function makeDiamond(height){
     return diamond;
 }
 
-console.log(makeDiamond(5))
+console.log(makeDiamond(50))
