@@ -4,6 +4,7 @@ let logger = function(errorMsg) {
   console.log("ERROR: " + errorMsg);
 };
 if (userInput < 0) {
+  logger("Invalid input");
   // ______("Invalid input");
 }
 
