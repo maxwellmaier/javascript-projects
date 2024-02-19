@@ -18,4 +18,12 @@ fox.color = 'red';
 console.log(fox);
 console.log(fox.age, fox.color);
 
+fox.type = 'fire';
+fox.mass = 1200;
+fox.analysis = "Giant fire warning.";
+fox.age = 900;
+
+console.log(fox);
+console.log(fox.analysis);
+
 //Try modifying or adding properties below.
