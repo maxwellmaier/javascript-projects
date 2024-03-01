@@ -1,20 +1,62 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Search Engine Selector</title>
-</head>
-<body>
+    <script>
+           function setSearchEngine(event) {
+
+               // event.preventDefault();
+
+      let selectedEngine = document.querySelector('input[name="engine"]:checked');
+       let engine = selectedEngine ? selectedEngine.value : null;
+       if (!engine) {
+           alert('Please select a search engine.');
+           return;
+	   }
+       let searchTerm = document.querySelector('input[name="q"]').value;
+       if (!searchTerm) {
+           alert('Please enter a search term.');
+           return;
+       }
+
+               let actions = {
+                   "google": "https://www.google.com/search?q=",
+                   "duckDuckGo": "https://duckduckgo.com/?q=",
+                   "bing": "https://www.bing.com/search?q=",
+                   "ask": "https://www.ask.com/web?q="
+               };
+
+               let actionURL = actions[engine];
+
+               let form = document.getElementById('searchForm');
+               form.setAttribute('action', actionURL);
+
+
+               console.log('setSearchEngine function executed!');
+           }
+
+           window.addEventListener('load', function(){
+
+               let form = document.getElementById('searchForm');
+
+               form.addEventListener('submit', setSearchEngine);
+           });
+    </script>
+  </head>
+  <body>
     <form id="searchForm">
-        <!-- Text input for the search term -->
-        <label>Search Term <input type="text" name="q"/></label>
-        <!-- Radio buttons for search engine selection -->
-        <label>Google <input type="radio" name="engine" value="google"/></label>
-        <label>DuckDuckGo <input type="radio" name="engine" value="duckDuckGo"/></label>
-        <label>Bing <input type="radio" name="engine" value="bing"/></label>
-        <label>Ask <input type="radio" name="engine" value="ask"/></label>
-        <!-- Submit button -->
-        <button type="submit">Go!</button>
+      <!-- Text input for the search term -->
+      <label>Search Term <input type="text" name="q" /></label>
+      <!-- Radio buttons for search engine selection -->
+      <label>Google <input type="radio" name="engine" value="google" /></label>
+      <label
+        >DuckDuckGo <input type="radio" name="engine" value="duckDuckGo"
+      /></label>
+      <label>Bing <input type="radio" name="engine" value="bing" /></label>
+      <label>Ask <input type="radio" name="engine" value="ask" /></label>
+      <!-- Submit button -->
+      <button type="submit">Go!</button>
     </form>
-</body>
+  </body>
 </html>
