@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Rocket Simulation</title>
-    <style>
-      label { display: block; margin-bottom: 7px;}
-    </style>
-  </head>
-  <body>
-    <!-- TODO: add form here -->
-    
+<head>
+  <meta charset="utf-8">
+  <title>Rocket Simulation</title>
+  <style>
+    label { display: block; margin-bottom: 7px; }
+  </style>
+</head>
+<body>
+  <form method="POST" action="https://handlers.education.launchcode.org/request-parrot">
+    <label>Test Name <input type="text" name="testName" required></label>
+    <label>Test Date <input type="date" name="testDate" required></label>
+    <label>Rocket Type 
+      <select name="rocketType" required>
+        <option value="Brant">Brant</option>
+        <option value="Lynx">Lynx</option>
+        <option value="Orion">Orion</option>
+        <option value="Terrier">Terrier</option>
+      </select>
+    </label>
+    <label>Number of Rocket Boosters <input type="number" name="boosterCount" min="1" max="9" required></label>
+    <label>Wind Rating 
+      <input type="radio" name="windRating" value="0" required> No Wind
+      <input type="radio" name="windRating" value="10"> Mild
+      <input type="radio" name="windRating" value="20"> Strong
+    </label>
+    <label>Use production grade servers <input type="checkbox" name="productionServers"></label>
+    <button type="submit">Run Simulation</button>
+  </form>
 
-    <p>WARNING: This ONLY works in <b>replit</b> if this "result" page is opened in its own window. Click the icon that shows a box with an arrow coming out of it.
-    </p>
-  </body>
-  
+  <p>WARNING: This ONLY works in <b>replit</b> if this "result" page is opened in its own window. Click the icon that shows a box with an arrow coming out of it.</p>
+</body>
 </html>
